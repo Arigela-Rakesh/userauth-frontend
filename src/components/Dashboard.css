@@ -1,0 +1,58 @@
+.dashboard-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-info {
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.welcome-text {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-detail {
+  margin: 15px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.user-detail strong {
+  color: #333;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+}
