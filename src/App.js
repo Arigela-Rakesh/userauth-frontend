@@ -4,6 +4,7 @@ import axios from 'axios';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import Home from './components/Home';
 import './App.css';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
@@ -36,17 +37,21 @@ function App() {
         <Routes>
           <Route 
             path="/login" 
-            element={user ? <Navigate to="/dashboard" /> : <Login setUser={setUser} />} 
+            element={user ? <Navigate to="/home" /> : <Login setUser={setUser} />} 
           />
           <Route 
             path="/register" 
-            element={user ? <Navigate to="/dashboard" /> : <Register setUser={setUser} />} 
+            element={user ? <Navigate to="/home" /> : <Register setUser={setUser} />} 
+          />
+          <Route 
+            path="/home" 
+            element={user ? <Home user={user} setUser={setUser} /> : <Navigate to="/login" />} 
           />
           <Route 
             path="/dashboard" 
             element={user ? <Dashboard user={user} setUser={setUser} /> : <Navigate to="/login" />} 
           />
-          <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
+          <Route path="/" element={<Navigate to={user ? "/home" : "/login"} />} />
         </Routes>
       </div>
     </Router>
