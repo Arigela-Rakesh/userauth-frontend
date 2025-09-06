@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import api from './api';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import './App.css';
-
-axios.defaults.baseURL = 'http://localhost:5000/api';
-axios.defaults.withCredentials = true;
 
 function App() {
   const [user, setUser] = useState(null);
@@ -20,7 +17,7 @@ function App() {
 
   const checkAuth = async () => {
     try {
-      const response = await axios.get('/auth/me');
+      const response = await api.get('/auth/me');
       setUser(response.data.user);
     } catch (error) {
       setUser(null);

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import './Home.css';
 
 function Home({ user, setUser }) {
   const handleLogout = async () => {
     try {
-      await axios.post('/auth/logout');
+      await api.post('/auth/logout');
       setUser(null);
     } catch (error) {
       console.error('Logout error:', error);

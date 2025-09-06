@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import './Login.css';
 
 function Login({ setUser }) {
@@ -20,7 +20,7 @@ function Login({ setUser }) {
     }
 
     try {
-      const response = await axios.post('/auth/login', formData);
+      const response = await api.post('/auth/login', formData);
       setUser(response.data.user);
     } catch (error) {
       setError(error.response?.data?.message || 'Login failed');
