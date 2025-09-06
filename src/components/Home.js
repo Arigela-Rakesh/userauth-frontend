@@ -13,7 +13,13 @@ function Home({ user, setUser }) {
     }
   };
 
-  const currentTime = new Date().toLocaleString();
+  const registrationDate = user.createdAt ? new Date(user.createdAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  }) : 'Unknown';
 
   return (
     <div className="home-container">
@@ -26,7 +32,7 @@ function Home({ user, setUser }) {
 
       <div className="user-info-card">
         <div className="user-email">📧 {user.email}</div>
-        <div className="login-time">🕒 Last login: {currentTime}</div>
+        <div className="login-time">📅 Member since: {registrationDate}</div>
       </div>
 
       <div className="features-grid">

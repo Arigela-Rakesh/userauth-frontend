@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import './App.css';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+axios.defaults.baseURL = 'http://localhost:5000/api';
 axios.defaults.withCredentials = true;
 
 function App() {
